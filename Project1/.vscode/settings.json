@@ -3,5 +3,21 @@
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
         "lib/**/*.jar"
-    ]
+    ],
+    "github.copilot.enable": {
+        "*": true,
+        "java": false
+    },
+    "[java]": {
+        "editor.quickSuggestions": {
+            "other": true,
+            "comments": false,
+            "strings": false
+        },
+        "editor.suggestOnTriggerCharacters": true,
+        "editor.acceptSuggestionOnEnter": "off",
+        "editor.tabCompletion": "off",
+        "editor.wordBasedSuggestions": "matchingDocuments",
+        "editor.inlineSuggest.enabled": false
+    }
 }
