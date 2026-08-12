@@ -1,0 +1,15 @@
+{
+  "java.completion.enabled": true,
+  "[java]": {
+    "editor.autoClosingBrackets": "always",
+    "editor.autoClosingQuotes": "always",
+    "editor.autoSurround": "languageDefined",
+    "editor.inlineSuggest.enabled": false,
+    "editor.snippetSuggestions": "none",
+    "editor.wordBasedSuggestions": "off",
+    "editor.suggest.showWords": false
+  },
+  "github.copilot.enable": {
+    "java": false
+  }
+}
