@@ -7,18 +7,18 @@ public class BankAccount {
     //quando tem-se o tipo boolean, o valor padrão é false.
 
     private int id;
-    private String clientName;
+    private Client client;
     private double balance;
     
     //métodos construtores
 
-    public BankAccount (int id, String clientName){
-        this(id, clientName, 0);
+    public BankAccount (int id, Client client){
+        this(id, client, 0);
     }
-    public BankAccount(int id, String clientName, double balance){
+    public BankAccount(int id, Client client, double balance){
         this.id = id;
-        this.clientName = clientName;
-        this.balance = balance;
+        this.client = client;
+        setBalance(balance);
     }
     public void setID (int id){
         this.id = id;
@@ -27,15 +27,17 @@ public class BankAccount {
         return id;
     }
 
-    public void setClientName(String clientName){
-        this.clientName = clientName;
+    public void setClientName(Client client){
+        this.client = client;
     }
-    public String getClientName(){
-        return clientName;
+    public Client getClientName(){
+        return client;
     }
 
     public void setBalance(double balance){
+        if(balance >= 0) {
         this.balance = balance;
+        }
     }
     public double getBalance(){
         return balance;
@@ -54,8 +56,16 @@ public class BankAccount {
     public void displayDetails(){
         System.out.println("Dados da conta:");
         System.out.println("Código: " + id);
-        System.out.println("Nome do Cliente: " + clientName);
+        System.out.println("Nome do Cliente: " + client);
         System.out.println("Saldo: R$ " + balance);
+    }
+
+    public String toString(){
+        return
+            "Dados da Conta" + 
+            "\nCódigo da conta: " + id + 
+            "\nCliente: " + client + 
+            "\nSaldo: " + balance;
     }
     
 
