@@ -13,4 +13,14 @@ public class PeopleManager {
     public List<Person> getPeopleList(){
         return peopleList;
     }
+
+    // método para adicionar/salvar uma pessoa na lista
+
+    public boolean save(Person person){
+        if(person != null){
+            peopleList.add(person);
+            return true;
+        }
+        return false;
+    }
 }
