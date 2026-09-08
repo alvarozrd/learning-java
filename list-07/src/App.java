@@ -60,7 +60,7 @@ public class App {
                     break;
 
                 case 3:
-                    // mostrando as tarefas cadastradas
+                    //mostrando as tarefas 
                     if (tasks.isEmpty()) {
                         System.out.println("Nenhuma tarefa cadastrada.");
                     } else {
@@ -75,7 +75,6 @@ public class App {
                     break;
 
                 case 4:
-                    // saindo do programa
                     System.out.println("Programa encerrado.");
                     break;
 
