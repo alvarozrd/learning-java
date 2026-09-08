@@ -1,3 +1,4 @@
+import javax.swing.JOptionPane;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -18,5 +19,11 @@ public class App {
         System.out.println("Mês: " + data1.getMonth());
         System.out.println("Ano: " + data1.getYear());
 
-    }
+        // adicionando o JOptionPane
+        // o código está em 'dating.java'
+
+        dating.executar();
+        }
+
+    
 }
