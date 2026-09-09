@@ -3,12 +3,12 @@ package br.edu.ifspcjo.ads.web2.model;
 public class HourlyEmployee extends Employee {
 
     private int numberOfHouersWorked;
-    private double valueOfHouresWorked;
+    private double valueOfHouersWorked;
     
     public HourlyEmployee(String name, String cpf, int numberOfHouersWorked, double valueOfHouresWorked) {
         super(name, cpf);
         this.numberOfHouersWorked = numberOfHouersWorked;
-        this.valueOfHouresWorked = valueOfHouresWorked;
+        this.valueOfHouersWorked = valueOfHouresWorked;
     }
 
     public int getNumberOfHouersWorked() {
@@ -19,23 +19,23 @@ public class HourlyEmployee extends Employee {
         this.numberOfHouersWorked = numberOfHouersWorked;
     }
 
-    public double getValueOfHouresWorked() {
-        return valueOfHouresWorked;
+    public double getValueOfHouersWorked() {
+        return valueOfHouersWorked;
     }
 
-    public void setValueOfHouresWorked(double valueOfHouresWorked) {
-        this.valueOfHouresWorked = valueOfHouresWorked;
+    public void setValueOfHouersWorked(double valueOfHouresWorked) {
+        this.valueOfHouersWorked = valueOfHouresWorked;
     }
 
     @Override
     public String toString() {
         return "HourlyEmployee [numberOfHouersWorked=" + numberOfHouersWorked + ", valueOfHouresWorked="
-                + valueOfHouresWorked + ", name=" + name + ", cpf=" + cpf + "]";
+                + valueOfHouersWorked + ", name=" + name + ", cpf=" + cpf + "]";
     }
 
     @Override
     public double calulateIncome() {
-        return numberOfHouersWorked * valueOfHouresWorked;
+        return numberOfHouersWorked * valueOfHouersWorked;
     }
 
     
