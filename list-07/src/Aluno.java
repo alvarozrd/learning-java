@@ -26,7 +26,26 @@ public class Aluno {
                     break;
                 } 
                 case 2: {
+                    String mensagem = "ALUNOS APROVADOS\n\n";
+                    boolean encontrouAprovado = false;
 
+                    for (Classmate aluno : estudantes) {
+                        if (aluno.getNota() >= 6.0) {
+                            // Monta a mensagem com os dados do aluno aprovado.
+                            mensagem += "Prontuário: " + aluno.getProntuario() + "\n";
+                            mensagem += "Nome: " + aluno.getAluno() + "\n";
+                            mensagem += "Nota: " + aluno.getNota() + "\n";
+                            mensagem += "----------------------\n";
+                            encontrouAprovado = true;
+                        }
+                    }
+
+                    if (encontrouAprovado) {
+                        JOptionPane.showMessageDialog(null, mensagem);
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Nenhum aluno aprovado encontrado.");
+                    }
+                    break;
                 }
             }
         }
