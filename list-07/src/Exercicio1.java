@@ -1,14 +1,38 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class App {
+class Task {
+    private int code;
+    private String title;
+
+    public Task(int code, String title) {
+        setCode(code);
+        setTitle(title);
+    }
+
+    public int getCode() {
+        return code;
+    }
+
+    public void setCode(int code) {
+        this.code = code;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+}
+
+public class Exercicio1 {
     public static void main(String[] args) {
-        // criando o scanner e a lista de tarefas
         Scanner scanner = new Scanner(System.in);
         ArrayList<Task> tasks = new ArrayList<Task>();
         int option;
 
-        // menu do programa
         do {
             System.out.println("\nMENU DE TAREFAS");
             System.out.println("1 - Adicionar uma tarefa");
@@ -21,7 +45,6 @@ public class App {
 
             switch (option) {
                 case 1:
-                    // adicionando uma nova tarefa
                     System.out.print("Digite o código da tarefa: ");
                     int code = scanner.nextInt();
                     scanner.nextLine();
@@ -36,14 +59,12 @@ public class App {
                     break;
 
                 case 2:
-                    // removendo uma tarefa pelo código
                     System.out.print("Digite o código da tarefa que deseja remover: ");
                     int codeToRemove = scanner.nextInt();
                     scanner.nextLine();
 
                     boolean removed = false;
 
-                    // procurando a tarefa dentro da lista
                     for (int i = 0; i < tasks.size(); i++) {
                         if (tasks.get(i).getCode() == codeToRemove) {
                             tasks.remove(i);
@@ -60,7 +81,6 @@ public class App {
                     break;
 
                 case 3:
-                    //mostrando as tarefas 
                     if (tasks.isEmpty()) {
                         System.out.println("Nenhuma tarefa cadastrada.");
                     } else {
@@ -82,7 +102,6 @@ public class App {
                     System.out.println("Opção inválida.");
                     break;
             }
-        // repete o menu até o usuário escolher sair
         } while (option != 4);
 
         scanner.close();
