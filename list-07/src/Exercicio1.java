@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+//na lista-07 deixei mais separado os exercícios, criando as classes de uso e a class main no mesmo arquivo.
+
 class Task {
     private int code;
     private String title;
