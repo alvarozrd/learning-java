@@ -20,4 +20,8 @@ public class EmployeesController {
         }
         return false;
     }
+
+    public List<Employee> getEmployees(){
+        return employeesList;
+    }
 }

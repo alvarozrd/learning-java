@@ -3,6 +3,7 @@ package br.edu.ifspcjo.ads.web2.view;
 import javax.swing.JOptionPane;
 
 import br.edu.ifspcjo.ads.web2.controller.EmployeesController;
+import br.edu.ifspcjo.ads.web2.model.ComissionedAndSalariedEmployee;
 import br.edu.ifspcjo.ads.web2.model.ComissionedEmployee;
 import br.edu.ifspcjo.ads.web2.model.Employee;
 import br.edu.ifspcjo.ads.web2.model.HourlyEmployee;
@@ -28,14 +29,13 @@ public class App {
 
         do{
 
-            option = Integer.parseInt(JOptionPane.showInputDialog("\nMENU DO APP\n1 - Adicionar Funcionário\n5 - Sair"));
+            option = Integer.parseInt(JOptionPane.showInputDialog("\nMENU DO APP\n1 - Adicionar Funcionário\n2 - Gerar Folha de Pagamento\n5 - Sair"));
 
             switch (option) {
 
                 case 1 : {
-                    // option = 0;
                     int typeOfEmplyee;
-                    typeOfEmplyee = Integer.parseInt(JOptionPane.showInputDialog("Qual o tipo de funcionário?\n1 - Horista\n2 - Comissionado\n3 - Comissionado e Assalariado\n 4 - Assalariado"));
+                    typeOfEmplyee = Integer.parseInt(JOptionPane.showInputDialog("Qual o tipo de funcionário?\n1 - Horista\n2 - Comissionado\n3 - Comissionado e Assalariado\n4 - Assalariado"));
 
                     switch ( typeOfEmplyee ) {
 
@@ -103,13 +103,34 @@ public class App {
                                 JOptionPane.showInputDialog("Porcentagem da comissão:")
                             );
 
-                            Employee employee = new ComissionedEmployee(
+                            double salary = Double.parseDouble(
+                                JOptionPane.showInputDialog("Salário fixo:")
+                            );
+
+                            Employee employee = new ComissionedAndSalariedEmployee(
                                 name,
                                 cpf,
                                 salesValue,
-                                comissionPersentege
+                                comissionPersentege,
+                                salary
                             );
 
+                            employeesController.save(employee);
+
+                            JOptionPane.showMessageDialog(null, "Funcionário cadastrado com sucesso.");
+
+                            break;
+                        }
+
+                        case 4 : {
+                            String name = JOptionPane.showInputDialog("Nome do funcionário:");
+                            String cpf = JOptionPane.showInputDialog("CPF do funcionário:");
+
+                            double salary = Double.parseDouble(
+                                JOptionPane.showInputDialog("Salário do funcionário:")
+                            );
+
+                            Employee employee = new SalariedEmployee(name, cpf, salary);
                             employeesController.save(employee);
 
                             JOptionPane.showMessageDialog(null, "Funcionário cadastrado com sucesso.");
@@ -120,13 +141,35 @@ public class App {
                         default : JOptionPane.showMessageDialog(null, typeOfEmplyee + " Não é uma opção válida.");
 
                     }
-                break;
+                    break;
                 }
-                case 2 : {
 
+                case 2 : {
+                    if (employeesController.getEmployees().isEmpty()) {
+                        JOptionPane.showMessageDialog(null, "Nenhum funcionário cadastrado.");
+                        break;
+                    }
+
+                    StringBuilder payroll = new StringBuilder("Folha de Pagamento:\n");
+                    double total = 0;
+
+                    for (Employee employee : employeesController.getEmployees()) {
+                        double income = employee.calulateIncome();
+                        total += income;
+                        payroll.append(employee.getName())
+                            .append(" - R$ ")
+                            .append(String.format("%.2f", income))
+                            .append("\n");
+                    }
+
+                    payroll.append("Total: R$ ")
+                        .append(String.format("%.2f", total));
+
+                    JOptionPane.showMessageDialog(null, payroll.toString());
+                    break;
                 }
+
                 default : JOptionPane.showMessageDialog(null, option + " Não é uma opção válida.");
-            
             }
         } while (option != 5);
 
