@@ -35,7 +35,12 @@ public class App {
 
                 case 1 : {
                     int typeOfEmplyee;
-                    typeOfEmplyee = Integer.parseInt(JOptionPane.showInputDialog("Qual o tipo de funcionário?\n1 - Horista\n2 - Comissionado\n3 - Comissionado e Assalariado\n4 - Assalariado"));
+                    typeOfEmplyee = Integer.parseInt(JOptionPane.showInputDialog
+                        ("Qual o tipo de funcionário?\n" +
+                        "1 - Horista\n" +
+                        "2- Comissionado\n" +
+                        "3 - Comissionado e Assalariado\n" +
+                        "4 - Assalariado"));
 
                     switch ( typeOfEmplyee ) {
 
