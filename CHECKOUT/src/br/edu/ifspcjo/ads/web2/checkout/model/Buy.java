@@ -1,0 +1,55 @@
+package br.edu.ifspcjo.ads.web2.checkout.model;
+
+public class Buy implements Authorizable, Printable {
+
+    private String clientName;
+    private double total;
+    private String productName;
+
+    //construtor com todos atributos
+    public Buy(String clientName, double total, String productName) {
+        this.clientName = clientName;
+        this.total = total;
+        this.productName = productName;
+    }
+
+
+    public String getClientName() {
+        return clientName;
+    }
+    public void setClientName(String clientName) {
+        this.clientName = clientName;
+    }
+
+    //sobrescreve
+    @Override 
+    public double getTotal() {
+        return total;
+    }
+    public void setTotal(double total) {
+        this.total = total;
+    }
+    public String getProductName() {
+        return productName;
+    }
+    public void setProductName(String productName) {
+        this.productName = productName;
+    }
+
+
+    // cumprindo o contrato da implementação
+
+    @Override
+    public String GerPageBody() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+
+    @Override
+    public String getPageHeader() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+}
