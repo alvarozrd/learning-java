@@ -41,15 +41,13 @@ public class Buy implements Authorizable, Printable {
 
     @Override
     public String GerPageBody() {
-        // TODO Auto-generated method stub
-        return null;
+        return productName + " = R$ " + total;
     }
 
 
     @Override
     public String getPageHeader() {
-        // TODO Auto-generated method stub
-        return null;
+        return clientName;
     }
 
 }
