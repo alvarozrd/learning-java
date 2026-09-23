@@ -8,7 +8,7 @@ public class EpsonPrinter implements Printer {
         System.out.println("*******************************");
         System.out.println(printable.getPageHeader());
         System.out.println("*******************************");
-        System.out.println(printable.GerPageBody());
+        System.out.println(printable.getPageBody());
         System.out.println("*******************************");
         System.out.println("===Epson===");
         System.out.println("*******************************");

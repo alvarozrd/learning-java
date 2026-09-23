@@ -40,7 +40,7 @@ public class Buy implements Authorizable, Printable {
     // cumprindo o contrato da implementação
 
     @Override
-    public String GerPageBody() {
+    public String getPageBody() {
         return productName + " = R$ " + total;
     }
 
