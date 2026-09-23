@@ -16,6 +16,7 @@ public class PagamentoPix extends Pagamento {
 
     @Override
     public double calcularTaxa() {
+        // No Pix, o cliente paga somente o valor da compra.
         return 0.0;
     }
 

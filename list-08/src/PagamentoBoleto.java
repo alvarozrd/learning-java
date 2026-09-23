@@ -26,6 +26,7 @@ public class PagamentoBoleto extends Pagamento {
 
     @Override
     public double calcularTaxa() {
+        // A emissao do boleto tem o mesmo custo, independentemente do valor.
         return 2.50;
     }
 

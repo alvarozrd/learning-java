@@ -2,6 +2,7 @@ import java.util.ArrayList;
 
 public class GerenciadorVendas {
     public static void main(String[] args) {
+        // A lista trata todos os meios de pagamento pela mesma interface.
         ArrayList<Pagamento> pagamentos = new ArrayList<Pagamento>();
 
         pagamentos.add(new PagamentoPix(100.00, "PIX-001", "cliente@email.com"));

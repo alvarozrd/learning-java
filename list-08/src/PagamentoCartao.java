@@ -26,6 +26,7 @@ public class PagamentoCartao extends Pagamento {
 
     @Override
     public double calcularTaxa() {
+        // Diferente do boleto, a taxa do cartao acompanha o valor bruto.
         return getValorBruto() * 0.035;
     }
 

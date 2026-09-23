@@ -24,6 +24,7 @@ public abstract class Pagamento {
     }
 
     public double calcularValorFinal() {
+        // A regra da taxa fica por conta do tipo concreto de pagamento.
         return valorBruto + calcularTaxa();
     }
 
