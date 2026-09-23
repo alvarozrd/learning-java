@@ -1,6 +1,7 @@
 package br.edu.ifspcjo.ads.web2.checkout.view;
 import br.edu.ifspcjo.ads.web2.checkout.model.Buy;
 import br.edu.ifspcjo.ads.web2.checkout.model.Card;
+import br.edu.ifspcjo.ads.web2.checkout.model.Checkout;
 import br.edu.ifspcjo.ads.web2.checkout.model.CieloOperator;
 import br.edu.ifspcjo.ads.web2.checkout.model.EpsonPrinter;
 import br.edu.ifspcjo.ads.web2.checkout.model.Operator;
@@ -14,5 +15,8 @@ public class App {
 
         Buy buy = new Buy("Juliana America", 7999, "iPhone 17");
         
+        Checkout checkout = new Checkout(printer, operator);
+        checkout.closeBuy(buy, card);
+
     }
 }
