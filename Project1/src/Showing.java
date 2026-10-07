@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class App2 {
+public class Showing {
     public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);
         int number1 = 5, number2 = 2, sum;

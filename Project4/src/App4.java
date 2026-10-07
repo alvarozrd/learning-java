@@ -1,4 +1,4 @@
-public class App {
+public class App4 {
     public static void main(String[] args) throws Exception {
         PeopleManager manager = new PeopleManager();
 

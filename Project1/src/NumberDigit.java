@@ -1,6 +1,6 @@
 import javax.swing.JOptionPane;
 
-public class App3 {
+public class NumberDigit {
     public static void main(String[] args) throws Exception {
         int number1 = 5, number2 = 2, sum;
         

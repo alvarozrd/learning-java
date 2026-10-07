@@ -1,4 +1,4 @@
-public class App {
+public class App3 {
     public static void main(String[] args) throws Exception {
         Client client = new Client(1, "Claudia Leite", "32395347383");
         BankAccount account = new BankAccount(1, client, - 500); 
